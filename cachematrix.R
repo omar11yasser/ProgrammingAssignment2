@@ -8,11 +8,11 @@ makeCacheMatrix <- function(x = matrix()) {
   }
   get <- function() x
   
-  ## function that sets the matrix the user entered.
-  setMatrix <- function(matrix)    m <<- solve(matrix) 
+  ## function that sets the natrix the user entered.
+  setInverseMatrixMatrix <- function(matrix)    m <<- solve(matrix) 
   ##function that returns the user inputed matrix
   getMatrix <- function() x
-  list( getMatrix = getMatrix, setMatrix = setMatrix)
+  list(setInverseMatrixMatrix = setInverseMatrixMatrix , getMatrix = getMatrix)
 }
 
 
@@ -24,7 +24,7 @@ cacheSolve <- function(x, ...) {
       return(m)
     }
     newMatrix <- x$get()
-    m <- mean(newMatrix , ...)
-    x$setMatrix(m)
+    m <- solve(newMatrix)
+    setInverseMatrixMatrix <- function(matrix)    m <<- solve(matrix) 
     m
 }
